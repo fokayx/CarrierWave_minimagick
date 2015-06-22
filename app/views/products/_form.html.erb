@@ -1,0 +1,16 @@
+<%= form_for @product do |f| %>
+  <%= f.label :name, '產品名稱' %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :description, '產品描述' %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :is_online, '是否上線' %>
+  <%= f.check_box :is_online %>
+  <br>
+  <%= f.label :productimage, '產品圖片' %>
+  <%= f.file_field :productimage %>
+  <br>
+  <%=  f.submit %>
+<% end %>
+  
