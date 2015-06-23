@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622084253) do
+ActiveRecord::Schema.define(version: 20150623092107) do
+
+  create_table "photos", force: :cascade do |t|
+    t.string  "image",      limit: 255
+    t.integer "product_id", limit: 4
+  end
+
+  add_index "photos", ["product_id"], name: "index_photos_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name",         limit: 255

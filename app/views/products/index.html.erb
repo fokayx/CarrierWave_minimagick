@@ -1,9 +1,12 @@
 <% @products.each do |product| %>
-  <%= product.name %>
   <br>
+  <%= link_to product.name, edit_product_path(product) %>
   <%= product.description %>
   <br>
   <%= product.productimage %>
   <%= image_tag product.productimage %>
   <br>
+  <% product.photos.each do |image|%>
+    <%= image_tag image.image %>
+  <% end %>
 <% end %>

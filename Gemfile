@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #
 
 # file upload
-gem 'carrierwave'
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 
 # image processor
 gem 'mini_magick'

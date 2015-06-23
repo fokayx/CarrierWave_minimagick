@@ -11,6 +11,8 @@
   <%= f.label :productimage, '產品圖片' %>
   <%= f.file_field :productimage %>
   <br>
+  <%= file_field_tag "images[]", type: :file, multiple: true %>
+  <br>
   <%=  f.submit %>
 <% end %>
   
