@@ -36,6 +36,7 @@ class ProductsController < ApplicationController
     else
       render :edit, notice: 'error'
     end
+
   end
 
   def destroy

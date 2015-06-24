@@ -1,4 +1,4 @@
-<%= form_for @product do |f| %>
+<%= form_for @product, html: { multipart: true } do |f| %>
   <%= f.label :name, '產品名稱' %>
   <%= f.text_field :name %>
   <br>
@@ -8,10 +8,18 @@
   <%= f.label :is_online, '是否上線' %>
   <%= f.check_box :is_online %>
   <br>
-  <%= f.label :productimage, '產品圖片' %>
+  <p><%= f.label :productimage, '產品圖片' %></p>
+  <%= image_tag(@product.productimage_url) if @product.productimage? %>
+  <br>
   <%= f.file_field :productimage %>
+  <%= f.label :remove_productimage, '刪除' %>
+  <%= f.check_box :remove_productimage %>
   <br>
   <%= file_field_tag "images[]", type: :file, multiple: true %>
+  <% @product.photos.each do |p| %>
+    <%= image_tag(p.image.url) %>
+    <%= link_to 'delete', photo_path(p), method: :delete, data: {confirm: '確定刪除'} %>
+  <% end %>
   <br>
   <%=  f.submit %>
 <% end %>
