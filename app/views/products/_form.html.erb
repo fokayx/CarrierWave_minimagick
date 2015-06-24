@@ -12,6 +12,7 @@
   <%= image_tag(@product.productimage_url) if @product.productimage? %>
   <br>
   <%= f.file_field :productimage %>
+  <br>
   <%= f.label :remove_productimage, '刪除' %>
   <%= f.check_box :remove_productimage %>
   <br>

@@ -26,6 +26,8 @@ class ProductsController < ApplicationController
   end
 
   def update
+  #  render text:params
+  #  return
     @product = Product.find(params[:id])
     if @product.update(product_params)
       if params[:images]
@@ -47,6 +49,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :is_online, :productimage)
+    params.require(:product).permit(:name, :description, :is_online, :productimage, :remove_productimage)
   end
 end
