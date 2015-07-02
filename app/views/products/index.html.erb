@@ -6,6 +6,11 @@
   <%= image_tag product.productimage %>
   <br>
   <% product.photos.each do |image|%>
-    <%= image_tag image.image %>
+    <div>
+      <%= image_tag image.image.thumb %>
+    </div>
+    <div>
+      <%= image_tag image.image %>
+    </div>
   <% end %>
 <% end %>
